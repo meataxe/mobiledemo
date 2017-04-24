@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\kendo.mobile.all.min.css" />
+    <Content Include="about.html" />
     <Content Include="index.html" />
     <Content Include="js\kendo.all.min.js" />
   </ItemGroup>
