@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>My App</title>
-  <link href="/css/kendo.mobile.all.min.css" rel="stylesheet" />
+  <link href="~/css/kendo.mobile.all.min.css" rel="stylesheet" />
 </head>
 <body>
   <div id="home" data-role="view" data-layout="default">
@@ -17,16 +17,19 @@
     <footer data-role="footer">
       <div data-role="tabstrip">
         <a href="#home">Home</a>
-        <a href="index2.html">Test 2</a>
+        <a href="about.html">About</a>
       </div>
     </footer>
   </section>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-  <script src="/js/kendo.all.min.js"></script>
-  
+  <script src="~/js/kendo.all.min.js"></script>
+
   <script>
-    var app = new kendo.mobile.Application();
+    var app = new kendo.mobile.Application(document.body,
+    {
+      transition: 'slide'
+    });
   </script>
 </body>
 </html>
