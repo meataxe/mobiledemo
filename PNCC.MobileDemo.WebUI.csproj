@@ -50,8 +50,10 @@
     <Content Include="css\images\kendoui.svg" />
     <Content Include="css\images\wp8_icons.png" />
     <Content Include="css\images\wp8_inverseicons.png" />
+    <Content Include="css\kendo.common.min.css" />
+    <Content Include="css\kendo.default.min.css" />
+    <Content Include="css\style.css" />
     <Content Include="css\kendo.mobile.all.min.css" />
-    <Content Include="about.html" />
     <Content Include="css\textures\brushed-metal.png" />
     <Content Include="css\textures\dots1.png" />
     <Content Include="css\textures\dots10.png" />
@@ -82,6 +84,7 @@
     <Content Include="css\textures\stripe6.png" />
     <Content Include="css\textures\transparency.png" />
     <Content Include="css\textures\transtexture.png" />
+    <Content Include="about.html" />
     <Content Include="index.html" />
     <Content Include="js\kendo.all.min.js" />
   </ItemGroup>
