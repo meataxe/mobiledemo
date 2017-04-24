@@ -43,12 +43,72 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\fonts\DejaVu\LICENSE.txt" />
+    <Content Include="css\fonts\glyphs\KendoUIGlyphs.svg" />
+    <Content Include="css\fonts\glyphs\WebComponentsIcons.svg" />
+    <Content Include="css\images\back.png" />
+    <Content Include="css\images\kendoui.svg" />
+    <Content Include="css\images\wp8_icons.png" />
+    <Content Include="css\images\wp8_inverseicons.png" />
     <Content Include="css\kendo.mobile.all.min.css" />
     <Content Include="about.html" />
+    <Content Include="css\textures\brushed-metal.png" />
+    <Content Include="css\textures\dots1.png" />
+    <Content Include="css\textures\dots10.png" />
+    <Content Include="css\textures\dots11.png" />
+    <Content Include="css\textures\dots12.png" />
+    <Content Include="css\textures\dots13.png" />
+    <Content Include="css\textures\dots2.png" />
+    <Content Include="css\textures\dots3.png" />
+    <Content Include="css\textures\dots4.png" />
+    <Content Include="css\textures\dots5.png" />
+    <Content Include="css\textures\dots6.png" />
+    <Content Include="css\textures\dots7.png" />
+    <Content Include="css\textures\dots8.png" />
+    <Content Include="css\textures\dots9.png" />
+    <Content Include="css\textures\glass-lighter.png" />
+    <Content Include="css\textures\glass.png" />
+    <Content Include="css\textures\highlight.png" />
+    <Content Include="css\textures\hsv-gradient.png" />
+    <Content Include="css\textures\hue.png" />
+    <Content Include="css\textures\leather1.png" />
+    <Content Include="css\textures\leather2.png" />
+    <Content Include="css\textures\noise.png" />
+    <Content Include="css\textures\stripe1.png" />
+    <Content Include="css\textures\stripe2.png" />
+    <Content Include="css\textures\stripe3.png" />
+    <Content Include="css\textures\stripe4.png" />
+    <Content Include="css\textures\stripe5.png" />
+    <Content Include="css\textures\stripe6.png" />
+    <Content Include="css\textures\transparency.png" />
+    <Content Include="css\textures\transtexture.png" />
     <Content Include="index.html" />
     <Content Include="js\kendo.all.min.js" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSans-Oblique.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSans.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSansMono-Bold.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSansMono-BoldOblique.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSansMono-Oblique.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSansMono.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSerif-Bold.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSerif-BoldItalic.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSerif-Italic.ttf" />
+    <None Include="css\fonts\DejaVu\DejaVuSerif.ttf" />
+    <None Include="css\fonts\glyphs\KendoUIGlyphs.eot" />
+    <None Include="css\fonts\glyphs\KendoUIGlyphs.ttf" />
+    <None Include="css\fonts\glyphs\KendoUIGlyphs.woff" />
+    <None Include="css\fonts\glyphs\WebComponentsIcons.eot" />
+    <None Include="css\fonts\glyphs\WebComponentsIcons.ttf" />
+    <None Include="css\fonts\glyphs\WebComponentsIcons.woff" />
+    <None Include="css\images\kendoui.ttf" />
+    <None Include="css\images\kendoui.woff" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
