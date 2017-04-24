@@ -43,6 +43,56 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\about-angular.html" />
+    <Content Include="content\about.html" />
+    <Content Include="content\css\images\android-sprite.png" />
+    <Content Include="content\css\images\iconmasks.svg" />
+    <Content Include="content\css\images\ios-sprite.png" />
+    <Content Include="content\css\kendo.mobile.all.min.css" />
+    <Content Include="content\css\style.css" />
+    <Content Include="content\images\200\california-rolls.jpg" />
+    <Content Include="content\images\200\chicken-teriyaki.jpg" />
+    <Content Include="content\images\200\chirashi-sushi.jpg" />
+    <Content Include="content\images\200\ebi-rolls.jpg" />
+    <Content Include="content\images\200\edamame.jpg" />
+    <Content Include="content\images\200\gohan.jpg" />
+    <Content Include="content\images\200\hosomaki-mix.jpg" />
+    <Content Include="content\images\200\maguro.jpg" />
+    <Content Include="content\images\200\miso-soup.jpg" />
+    <Content Include="content\images\200\salmon-teriyaki.jpg" />
+    <Content Include="content\images\200\sashimi-salad.jpg" />
+    <Content Include="content\images\200\seattle-rolls.jpg" />
+    <Content Include="content\images\200\seaweed-salad.jpg" />
+    <Content Include="content\images\200\shake.jpg" />
+    <Content Include="content\images\200\shiromi.jpg" />
+    <Content Include="content\images\200\spicytuna-rolls.jpg" />
+    <Content Include="content\images\200\tekka-maki.jpg" />
+    <Content Include="content\images\200\tori-katsu.jpg" />
+    <Content Include="content\images\200\yaki-udon.jpg" />
+    <Content Include="content\images\75\california-rolls.jpg" />
+    <Content Include="content\images\75\chicken-teriyaki.jpg" />
+    <Content Include="content\images\75\chirashi-sushi.jpg" />
+    <Content Include="content\images\75\ebi-rolls.jpg" />
+    <Content Include="content\images\75\edamame.jpg" />
+    <Content Include="content\images\75\gohan.jpg" />
+    <Content Include="content\images\75\hosomaki-mix.jpg" />
+    <Content Include="content\images\75\maguro.jpg" />
+    <Content Include="content\images\75\miso-soup.jpg" />
+    <Content Include="content\images\75\salmon-teriyaki.jpg" />
+    <Content Include="content\images\75\sashimi-salad.jpg" />
+    <Content Include="content\images\75\seattle-rolls.jpg" />
+    <Content Include="content\images\75\seaweed-salad.jpg" />
+    <Content Include="content\images\75\shake.jpg" />
+    <Content Include="content\images\75\shiromi.jpg" />
+    <Content Include="content\images\75\spicytuna-rolls.jpg" />
+    <Content Include="content\images\75\tekka-maki.jpg" />
+    <Content Include="content\images\75\tori-katsu.jpg" />
+    <Content Include="content\images\75\yaki-udon.jpg" />
+    <Content Include="content\images\happy.png" />
+    <Content Include="content\images\sad.png" />
+    <Content Include="content\images\tabstrip.png" />
+    <Content Include="content\sushi-angular.js" />
+    <Content Include="content\sushi.js" />
     <Content Include="css\fonts\DejaVu\LICENSE.txt" />
     <Content Include="css\fonts\glyphs\KendoUIGlyphs.svg" />
     <Content Include="css\fonts\glyphs\WebComponentsIcons.svg" />
@@ -87,9 +137,13 @@
     <Content Include="about.html" />
     <Content Include="index.html" />
     <Content Include="js\kendo.all.min.js" />
+    <Content Include="sushi-angular.html" />
+    <Content Include="Sushi-MVVM.html" />
+    <Content Include="Sushi.html" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="content\menu.json" />
     <None Include="css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <None Include="css\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <None Include="css\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
