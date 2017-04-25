@@ -133,7 +133,7 @@
     <Content Include="content\css\textures\stripe6.png" />
     <Content Include="content\css\textures\transparency.png" />
     <Content Include="content\css\textures\transtexture.png" />
-    <Content Include="js\kendo.all.min.js" />
+    <Content Include="content\js\kendo.all.min.js" />
     <Content Include="sushi-angular.html" />
     <Content Include="Sushi-MVVM.html" />
     <Content Include="index.html" />
