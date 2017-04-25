@@ -137,7 +137,7 @@
     <Content Include="js\kendo.all.min.js" />
     <Content Include="sushi-angular.html" />
     <Content Include="Sushi-MVVM.html" />
-    <Content Include="Sushi.html" />
+    <Content Include="index.html" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
