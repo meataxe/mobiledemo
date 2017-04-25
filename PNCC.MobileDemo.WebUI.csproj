@@ -134,8 +134,6 @@
     <Content Include="css\textures\stripe6.png" />
     <Content Include="css\textures\transparency.png" />
     <Content Include="css\textures\transtexture.png" />
-    <Content Include="about.html" />
-    <Content Include="index.html" />
     <Content Include="js\kendo.all.min.js" />
     <Content Include="sushi-angular.html" />
     <Content Include="Sushi-MVVM.html" />
@@ -143,6 +141,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="content\timesheets.json" />
     <None Include="content\menu.json" />
     <None Include="css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <None Include="css\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
