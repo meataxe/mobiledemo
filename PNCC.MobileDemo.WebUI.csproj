@@ -129,12 +129,14 @@
     <Content Include="content\css\textures\stripe6.png" />
     <Content Include="content\css\textures\transparency.png" />
     <Content Include="content\css\textures\transtexture.png" />
+    <Content Include="content\js\jquery-1.9.1.min.js" />
     <Content Include="content\js\kendo.all.min.js" />
     <Content Include="index.html" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <None Include="content\timesheets.json" />
+    <None Include="content\staffTimesheets.json" />
+    <None Include="content\myTimesheets.json" />
     <None Include="content\css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <None Include="content\css\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <None Include="content\css\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
