@@ -56,26 +56,63 @@
     </ul>
   </div>
 
-  <div data-role="view" id="account" data-layout="default" data-title="My Account">
-        <ul data-role="listview" data-style="inset" data-type="group">
-            <li>
-                Account
-                <ul>
-                    <li>Name<span class="list-item-data">Mark Bellhouse</span></li>
-                    <li>Supervisor<span class="list-item-data">Linda Lindeman</span></li>
-                </ul>
-            </li>
-        </ul>
+<div data-role="view" id="account" data-layout="default" data-title="My Account">
+  <ul data-role="listview" data-style="inset" data-type="group">
+    <li>
+      Account
+      <ul>
+        <li>Name<span class="list-item-data">Mark Bellhouse</span></li>
+        <li>Supervisor<span class="list-item-data">Linda Lindeman</span></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  
+<div data-role="view" id="details" data-transition="slide" data-layout="default" data-show="showDetailsView">
+  <header data-role="header">
+    <div data-role="navbar">
+      <a data-role="backbutton" data-align="left">Back</a>
+      <span data-role="view-title">Timesheet</span>
     </div>
+  </header>
+
+  <div data-role="content">
+  </div>
+</div>
+  
+<script id="detailTemplate" type="text/x-kendo-template">
+  <h2>#:date# <small>#:name#: #:status#</small></h2>     
+  
+  <ul data-role="listview" data-style="inset" data-type="group">
+    <li>
+      Jobs
+
+      <ul id="jobs"
+          class="item-list"
+          data-role="listview"
+          data-template="jobsTemplate"
+          data-source="data.jobs"></ul>
+    </li>
+  </ul>
+       
+</script>
+  
+  <script id="jobsTemplate" type="text/x-kendo-template">
+    <h2>#:job#</h2>
+    <div>#:name#:</div>
+  </script>
  
-  <script id="staffTimesheetTemplate" type="text/x-kendo-template">
+<script id="staffTimesheetTemplate" type="text/x-kendo-template">
     <h2>#:date#</h2>          
     <div>#:name#: #:status#</div>
   </script>
-  
-  <script id="myTimesheetTemplate" type="text/x-kendo-template">
+   
+<script id="myTimesheetTemplate" type="text/x-kendo-template">
     <h2>#:date#</h2>
     <div>#:status#</div>
+    <a data-role="button"
+       data-item-id="#:id#"
+       href="\#details?id=#:id#">Edit</a>
   </script>
 
 <script>
@@ -84,10 +121,14 @@
       schema = { model: {} },
       myDs = generateDatasource("content/myTimesheets.json"),
       staffDs = generateDatasource("content/staffTimesheets.json"),
+      editTimesheetDs = generateDatasource("content/timesheetDetails.json"),
       myTimesheets = new kendo.data.DataSource({
         schema: schema
       }),
       staffTimesheets = new kendo.data.DataSource({
+        schema: schema
+      }),
+      editTimesheet = new kendo.data.DataSource({
         schema: schema
       });
 
@@ -97,9 +138,15 @@
       staffDs.bind("change", function () {
         staffTimesheets.data(staffDs.data());
       });
+      editTimesheetDs.bind("change", function () {
+        editTimesheet.data(editTimesheetDs.data());
+      });
+
+      itemDetailsTemplate = kendo.template($("#detailTemplate").text());
 
       myDs.fetch();
       staffDs.fetch();
+      editTimesheetDs.fetch();
 
       function generateDatasource(src) {
         return new kendo.data.DataSource({
@@ -121,6 +168,18 @@
 
       function showMenuView(e) {
         e.view.content.find(".item-list").data("kendoMobileListView").refresh();
+      }
+
+      function showDetailsView(e) {
+        var
+          view = e.view,
+          item;
+
+        myDs.fetch(function () {
+          item = editTimesheetDs.get(5); //editTimesheetDs.get(view.params.id);
+          view.scrollerContent.html(itemDetailsTemplate(item));
+          kendo.mobile.init(view.content);
+        });
       }
 
     app = new kendo.mobile.Application($(document.body),

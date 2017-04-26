@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="content\timesheetDetails.json" />
     <None Include="content\staffTimesheets.json" />
     <None Include="content\myTimesheets.json" />
     <None Include="content\css\fonts\DejaVu\DejaVuSans-Bold.ttf" />

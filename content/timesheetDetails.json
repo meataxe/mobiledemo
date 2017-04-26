@@ -1,0 +1,37 @@
+[
+  {
+    "id": 5,
+    "date": "2017-04-11",
+    "status": "created",
+    "name": "Syed",
+    "startTime": "07:30",
+    "finishTime": "09:30",
+    "totalHoursStd": 2.0,
+    "totalHoursOT": 0.0,
+    "jobs": [
+      {
+        "job": "105-050-103",
+        "name": "Lawnmowing",
+        "description": "Mowed the lawns today, looked full of weeds and will need to spray next week",
+        "hoursStd": 2.0,
+        "hoursOT": 0.0,
+        "plantItems": [
+          {
+            "plant": "92",
+            "name": "petrol lawnmower",
+            "start": 0.0,
+            "finish": 2.0,
+            "unit": "Hrs"
+          },
+          {
+            "plant": "93",
+            "name": "Toyota diesel ute",
+            "start": 150363,
+            "finish": 150368,
+            "unit": "Kms"
+          }
+        ]
+      }
+    ]
+  }
+] 
