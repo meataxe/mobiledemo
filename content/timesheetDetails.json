@@ -10,7 +10,7 @@
     "totalHoursOT": 0.0,
     "jobs": [
       {
-        "job": "105-050-103",
+        "job": "105050-103",
         "name": "Lawnmowing",
         "description": "Mowed the lawns today, looked full of weeds and will need to spray next week",
         "hoursStd": 2.0,
@@ -31,6 +31,30 @@
             "unit": "Kms"
           }
         ]
+      },
+      {
+        "job": "500505-103",
+        "name": "Water plants",
+        "description": "Watered the plants at PNCC CAB, 4th floor sth",
+        "hoursStd": 1.0,
+        "hoursOT": 0,
+        "plantItems": [
+          {
+            "plant": "50",
+            "name": "Portable hose",
+            "start": 0,
+            "finish": 1.0,
+            "unit": "Hrs"
+          }
+        ]
+      },
+      {
+        "job": "700104-103",
+        "name": "Training",
+        "description": "Defib. training course",
+        "hoursStd": 2.0,
+        "hoursOT": 0.0,
+        "plantItems": []
       }
     ]
   }

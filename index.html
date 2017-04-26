@@ -5,10 +5,12 @@
     <link href="content/css/kendo.common.min.css" rel="stylesheet"/>
     <link href="content/css/kendo.default.min.css" rel="stylesheet"/>
     <link href="content/css/kendo.mobile.all.min.css" rel="stylesheet"/>
+    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="content/css/style.css" rel="stylesheet" />
   
     <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="content/js/kendo.all.min.js"></script>    
+    <script src="content/js/bootstrap.min.js"></script>    
   </head>
 <body>
     <div data-role="layout" data-id="default">
@@ -81,113 +83,134 @@
 </div>
   
 <script id="detailTemplate" type="text/x-kendo-template">
-  <h2>#:date# <small>#:name#: #:status#</small></h2>     
-  
+  <h2>#:name#: #:date# <small> | status: #:status#</small></h2>       
   <ul data-role="listview" data-style="inset" data-type="group">
     <li>
       Jobs
+      
 
       <ul id="jobs"
           class="item-list"
-          data-role="listview"
-          data-template="jobsTemplate"
-          data-source="data.jobs"></ul>
+          data-role="listview">
+        
+        <li>
+          <div class="row">
+            <div class="col-xs-8"><div class="pull-left">Job</div></div>
+            <div class="col-xs-2">Std Hrs</div>
+            <div class="col-xs-2">OT Hrs</div>
+          </div>
+        </li>
+        
+        # for (var i = 0; i < data.jobs.length; i++) { #
+          <li>
+            <div class="row">
+              <div class="col-xs-8">
+                <div class="pull-left">
+                  <span>#= data.jobs[i].job #</span> | <span>#= data.jobs[i].name#</span>
+                </div>
+              </div>
+              <div class="col-xs-2">#= data.jobs[i].hoursStd#</div>
+              <div class="col-xs-2">#= data.jobs[i].hoursOT#</div>
+            </div>
+          </li>
+        # } #
+
+</ul>
     </li>
-  </ul>
-       
+  </ul>       
 </script>
   
-  <script id="jobsTemplate" type="text/x-kendo-template">
-    <h2>#:job#</h2>
-    <div>#:name#:</div>
-  </script>
+<script id="jobsTemplate" type="text/x-kendo-template">
+  <h2>#:job#</h2>
+  <div>#:name#:</div>
+</script>
  
 <script id="staffTimesheetTemplate" type="text/x-kendo-template">
-    <h2>#:date#</h2>          
-    <div>#:name#: #:status#</div>
-  </script>
+  <h2>#:date#</h2>          
+  <div>#:name#: #:status#</div>
+</script>
    
 <script id="myTimesheetTemplate" type="text/x-kendo-template">
-    <h2>#:date#</h2>
-    <div>#:status#</div>
-    <a data-role="button"
-       data-item-id="#:id#"
-       href="\#details?id=#:id#">Edit</a>
-  </script>
+  <h2>#:date#</h2>
+  <div>#:status#</div>
+  <a data-role="button"
+     data-item-id="#:id#"
+     href="\#details?id=#:id#">Edit</a>
+</script>
 
 <script>
-    var 
-      app,
-      schema = { model: {} },
-      myDs = generateDatasource("content/myTimesheets.json"),
-      staffDs = generateDatasource("content/staffTimesheets.json"),
-      editTimesheetDs = generateDatasource("content/timesheetDetails.json"),
-      myTimesheets = new kendo.data.DataSource({
-        schema: schema
-      }),
-      staffTimesheets = new kendo.data.DataSource({
-        schema: schema
-      }),
-      editTimesheet = new kendo.data.DataSource({
-        schema: schema
-      });
-
-      myDs.bind("change", function () {
-        myTimesheets.data(myDs.data());          
-      });
-      staffDs.bind("change", function () {
-        staffTimesheets.data(staffDs.data());
-      });
-      editTimesheetDs.bind("change", function () {
-        editTimesheet.data(editTimesheetDs.data());
-      });
-
-      itemDetailsTemplate = kendo.template($("#detailTemplate").text());
-
-      myDs.fetch();
-      staffDs.fetch();
-      editTimesheetDs.fetch();
-
-      function generateDatasource(src) {
-        return new kendo.data.DataSource({
-          schema: {
-            model: {
-              id: "id"
-            }
-          },
-          transport: {
-            read: {
-              url: src,
-              dataType: "json"
-            }
-          },
-          group: "category",
-          error: function () { console.log(arguments); }
-        });
-      }
-
-      function showMenuView(e) {
-        e.view.content.find(".item-list").data("kendoMobileListView").refresh();
-      }
-
-      function showDetailsView(e) {
-        var
-          view = e.view,
-          item;
-
-        myDs.fetch(function () {
-          item = editTimesheetDs.get(5); //editTimesheetDs.get(view.params.id);
-          view.scrollerContent.html(itemDetailsTemplate(item));
-          kendo.mobile.init(view.content);
-        });
-      }
-
-    app = new kendo.mobile.Application($(document.body),
-    {
-      platform: 'android',
-      transition: "slide"
+  var 
+    app,
+    schema = { model: {} },
+    myDs = generateDatasource("content/myTimesheets.json"),
+    staffDs = generateDatasource("content/staffTimesheets.json"),
+    editTimesheetDs = generateDatasource("content/timesheetDetails.json"),
+    myTimesheets = new kendo.data.DataSource({
+      schema: schema
+    }),
+    staffTimesheets = new kendo.data.DataSource({
+      schema: schema
+    }),
+    editTimesheet = new kendo.data.DataSource({
+      schema: schema
     });
-    </script>
+
+    myDs.bind("change", function () {
+      myTimesheets.data(myDs.data());          
+    });
+    staffDs.bind("change", function () {
+      staffTimesheets.data(staffDs.data());
+    });
+    editTimesheetDs.bind("change", function () {
+      editTimesheet.data(editTimesheetDs.data());
+    });
+
+    itemDetailsTemplate = kendo.template($("#detailTemplate").text());
+
+    myDs.fetch();
+    staffDs.fetch();
+    editTimesheetDs.fetch();
+
+    function generateDatasource(src) {
+      return new kendo.data.DataSource({
+        schema: {
+          model: {
+            id: "id"
+          }
+        },
+        transport: {
+          read: {
+            url: src,
+            dataType: "json"
+          }
+        },
+        group: "category",
+        error: function () { console.log(arguments); }
+      });
+    }
+
+    function showMenuView(e) {
+      e.view.content.find(".item-list").data("kendoMobileListView").refresh();
+    }
+
+    function showDetailsView(e) {
+      var
+        view = e.view,
+        item;
+
+      myDs.fetch(function () {
+        item = editTimesheetDs.get(5); //editTimesheetDs.get(view.params.id);
+        view.content.html(itemDetailsTemplate(item));
+        kendo.mobile.init(view.content);
+      });
+    }
+
+  app = new kendo.mobile.Application($(document.body),
+  {
+    platform: 'android',
+    transition: "slide"
+  });
+</script>
 </body>
 </html>
 
