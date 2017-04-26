@@ -43,7 +43,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="content\about-angular.html" />
     <Content Include="content\about.html" />
     <Content Include="content\css\images\android-sprite.png" />
     <Content Include="content\css\images\iconmasks.svg" />
@@ -90,8 +89,6 @@
     <Content Include="content\images\happy.png" />
     <Content Include="content\images\sad.png" />
     <Content Include="content\images\tabstrip.png" />
-    <Content Include="content\sushi-angular.js" />
-    <Content Include="content\sushi.js" />
     <Content Include="content\css\fonts\DejaVu\LICENSE.txt" />
     <Content Include="content\css\fonts\glyphs\KendoUIGlyphs.svg" />
     <Content Include="content\css\fonts\glyphs\WebComponentsIcons.svg" />
@@ -101,7 +98,6 @@
     <Content Include="content\css\images\wp8_inverseicons.png" />
     <Content Include="content\css\kendo.common.min.css" />
     <Content Include="content\css\kendo.default.min.css" />
-    <Content Include="css\style.css" />
     <Content Include="content\css\kendo.mobile.all.min.css" />
     <Content Include="content\css\textures\brushed-metal.png" />
     <Content Include="content\css\textures\dots1.png" />
@@ -134,16 +130,11 @@
     <Content Include="content\css\textures\transparency.png" />
     <Content Include="content\css\textures\transtexture.png" />
     <Content Include="content\js\kendo.all.min.js" />
-    <Content Include="sushi-angular.html" />
-    <Content Include="Sushi-MVVM.html" />
     <Content Include="index.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="css\images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="content\timesheets.json" />
-    <None Include="content\menu.json" />
     <None Include="content\css\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <None Include="content\css\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <None Include="content\css\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />

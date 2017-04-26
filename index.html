@@ -7,7 +7,7 @@
     <link href="content/css/kendo.mobile.all.min.css" rel="stylesheet"/>
     <link href="content/css/style.css" rel="stylesheet" />
   
-    <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="content/js/kendo.all.min.js"></script>    
   </head>
 <body>
@@ -29,19 +29,31 @@
     </div>
 
   <div data-title="PNCC Timesheets" data-role="view" id="index" data-url="/" data-layout="default" data-show="showMenuView">
-    <ul id="my-timesheets"
-        class="item-list"
-        data-role="listview"
-        data-template="timesheetTemplate"
-        data-source="timesheets"></ul>
+    <ul data-role="listview" data-style="inset" data-type="group">
+      <li>
+        My Timesheets
+
+        <ul id="my-timesheets"
+            class="item-list"
+            data-role="listview"
+            data-template="timesheetTemplate"
+            data-source="myTimesheets"></ul>
+      </li>
+    </ul>
   </div>
   
   <div data-role="view" id="staff" data-layout="default" data-title="My Staff">
-    <ul id="staff-timesheets"
-        class="item-list"
-        data-role="listview"
-        data-template="timesheetTemplate"
-        data-source="timesheets"></ul>  
+    <ul data-role="listview" data-style="inset" data-type="group">
+      <li>
+        Staff Timesheets
+
+        <ul id="staff-timesheets"
+            class="item-list"
+            data-role="listview"
+            data-template="timesheetTemplate"
+            data-source="staffTimesheets"></ul>
+      </li>
+    </ul>
   </div>
 
   <div data-role="view" id="account" data-layout="default" data-title="My Account">
@@ -49,8 +61,8 @@
             <li>
                 Account
                 <ul>
-                    <li>Username<span class="list-item-data">kendoSushi</span></li>
-                    <li>Email<span class="list-item-data">sushi@kendoui.com</span></li>
+                    <li>Name<span class="list-item-data">Mark Bellhouse</span></li>
+                    <li>Supervisor<span class="list-item-data">Linda Lindeman</span></li>
                 </ul>
             </li>
         </ul>
@@ -81,12 +93,18 @@
           error: function() { console.log(arguments); }
         });
 
-        var timesheets = new kendo.data.DataSource({
+        var myTimesheets = new kendo.data.DataSource({
+          schema: schema
+        }),
+        staffTimesheets = new kendo.data.DataSource({
           schema: schema
         });
 
-        ds.bind("change", function() {
-          timesheets.data(ds.data());
+        ds.bind("change", function () {
+          var data = ds.data();
+
+          myTimesheets.data(data.mytimesheets);
+          staffTimesheets.data(data.stafftimesheets);
         });
 
         ds.fetch();
